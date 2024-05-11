@@ -7,19 +7,19 @@ sslack es una herramienta de línea de comandos (CLI) que permite interactuar de
 
 ## Ejemplo de uso
 
+Enviamos un mensaje o archivo a un id de canal, pasándole directamente el token de autenticación:
 ```bash
-sslack send --channel XXXXXX --message "Hello, world!" --token XXXXXX
+sslack send --channel ABC123YZ --message "Hello, world!" --token XXXXXXXX
+```
+```bash
+sslack send -c ABC123YZ --file /path/to/file --t XXXXXXXX
 ```
 
-```bash
-sslack send -c XXXXXX --file /path/to/file --t XXXXXX
-```
-
-Puedes almacenar localmente el token y los nombres de canales (`HOME_DIR/.sslackConfig`) para no tener que especificarlos en cada comando:
+Puedes almacenar el token y los nombres de canales en un fichero local (`HOME_DIR/.sslackConfig`) para no tener que especificarlos en cada comando:
 
 ```bash
-slack set-channel -c XXXXXX -n test_channel
-slack set-token -t XXXXXX
+sslack set-channel -c ABC123YZ -n test_channel
+sslack set-token -t ABC123YZ
 ```
 
 ```bash
