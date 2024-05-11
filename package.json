@@ -9,7 +9,7 @@
     "build": "bun build ./src/index.js --compile --outfile ./dist/sslack"
   },
   "author": "Pep3 Marquez",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@slack/web-api": "^6.10.0",
     "axios": "^1.6.3",
