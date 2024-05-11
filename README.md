@@ -1,7 +1,9 @@
 # sslack
 
 ![1715393379939](image/Readme/1715393379939.png)
-sslack es una herramienta de línea de comandos (CLI) que permite interactuar con Slack enviando mensajes y archivos a canales de tu workspace. Solo necesitas el OAuth Token que te provee Slack para un workspace con los permisos necesarios.
+
+
+sslack es una herramienta de línea de comandos (CLI) que permite interactuar de manera sencilla con la api de Slack enviando mensajes y archivos a canales y usuarios de tu workspace.
 
 ## Ejemplo de uso
 
@@ -36,21 +38,34 @@ bun install
 
 ## Crear un ejecutable (Linux)
 
-Para crear un ejecutable de sslack, puedes ejecutar el script build definido en el archivo package.json:
+Para crear un compilado de sslack, puedes ejecutar el script build definido en el archivo package.json:
 
 ```bash
 bun run build
 ```
 
-Esto te creara un ejecutable en el siguiente directorio: `./dist/sslack	`
+Esto te creara un ejecutable en el siguiente directorio: `./dist/sslack`
 
 ## Instalarlo globalmente
 
-Si tras exportar el ejecutable deseas instalarlo globalmente en tu sistema, puedes ejecutar el siguiente comando para copiar tu ejecutable a la carpeta `/usr/local/bin`:
+Si tras exportar el ejecutable deseas instalarlo globalmente en tu sistema, puedes ejecutar el siguiente comando para copiar el fichero a la carpeta `/usr/local/bin`:
 
 ```bash
 sudo cp ./dist/sslack /usr/local/bin
 ```
+
+## Integración con Slack
+Para poder usarlo en tu workspace de Slack, necesitas [crear una app](https://api.slack.com/apps/) (de tipo Bot bastará) en dicho workspace y obtener un token de autenticación (OAuth). Ademas, deberás otorgarle los siguientes permisos a tu app:
+- channels:join
+- channels:write.invites
+- chat:write
+- files:write
+- groups:write
+- groups:write.invites
+- im:write.invites
+- mpim:write.invites
+
+Siempre podrás limitar los permisos de tu app a los que realmente necesite.
 
 ## Contribuir
 
