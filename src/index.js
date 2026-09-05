@@ -12,6 +12,7 @@ program
   .option('-t, --token <token>', 'Token de autenticación de Slack (opcional)')
   .action((cmdObj) => {
     if (!cmdObj.name && !cmdObj.channel) return console.error('Debes especificar un canal al que enviar el mensaje. Use la flag -f <channel-id> o -n <custom-channel-name>');
+    if (!cmdObj.file && !cmdObj.message) return console.error('Debes especificar un mensaje (-m) o un archivo (-f) a enviar');
     const channelId = cmdObj.channel || getChannelId(cmdObj.name);
     if (cmdObj.file) {
       sendFile(channelId, cmdObj.file, cmdObj.token);
@@ -42,4 +43,4 @@ program
   .description('Lista los canales de Slack guardados')
   .action(listChannels);
     
-program.parse(process.argv); 
+program.parse(process.argv); 
